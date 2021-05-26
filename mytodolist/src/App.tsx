@@ -18,8 +18,7 @@ export const App:React.FC=()=>{
   //The toggleTodo function will take a selected todo
   // and toggle the complete prop for that todo.
   const toggleTodo:ToggleToDo=toDoSelected=>{
-    // 1st show below
-  //const toggleTodo=(toDoSelected:Todo)=>{
+   
    const newTodos=todos.map(todo=>{
     if(todo==toDoSelected)
     {
@@ -32,11 +31,9 @@ export const App:React.FC=()=>{
    });
    setTodos(newTodos);
   }
-  //const addTask=(newTodo:string)=>{
+ 
     const addTodo:AddToDo=newTodo=>{
-    //setTodos([...todos,newTodo]);
-    //setTodos([...todos,{text:newTodo,complete:false}]);
-    // below line at last when u dont wanna add empty todolist 
+     
     newTodo.trim()!=="" && 
     setTodos([...todos,{text:newTodo,complete:false}])
   }

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ChangeEvent, useState } from 'react';
 import { AddTaskProps } from './AddTaskProps';
 export const AddTask:React.FC<AddTaskProps>=({addTodo})=>{
-//export const AddTask:React.FC=()=>{
+
     const [newTodo,setNewTodo]=useState("");
     const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
         setNewTodo(e.target.value);
