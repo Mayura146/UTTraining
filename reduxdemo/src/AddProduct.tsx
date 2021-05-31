@@ -40,7 +40,9 @@ export const AddProduct: React.FC<ProductProps> = ({ saveProduct }) => {
           placeholder="description"
           onChange={handleProductData}
         ></input>
-        <button disabled={products==undefined ? true :false}>Add Product</button>
+        <button disabled={products == undefined ? true : false}>
+          Add Product
+        </button>
       </form>
     </div>
   );
