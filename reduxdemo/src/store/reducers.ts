@@ -1,7 +1,6 @@
 import { ProductState, ProductAction } from '../types';
 import * as actionTypes from './actionTypes';
 import { IProductProps } from '../Products';
-import { stat } from 'fs';
 
 const intialState:ProductState={
    products:[

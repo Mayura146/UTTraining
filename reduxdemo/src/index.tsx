@@ -10,7 +10,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
 const store:Store<ProductState,ProductAction> &{dispatch:DispatchType}=
-createStore(reducer,applyMiddleware(thunk));
+createStore(reducer); 
 ReactDOM.render(
 <Provider store={store}>
     <App />

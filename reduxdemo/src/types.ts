@@ -1,5 +1,5 @@
 import { IProductProps } from './Products';
-import { removeProduct } from './store/actionCreator';
+
 export type ProductState={
     products:IProductProps[];
 }
