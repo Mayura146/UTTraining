@@ -1,8 +1,6 @@
 import * as React from "react";
 import { ProductProps } from "./types";
 import { IProductProps } from "./Products";
-import { addProduct } from "./store/actionCreator";
-import reducer from "./store/reducers";
 
 export const AddProduct: React.FC<ProductProps> = ({ saveProduct }) => {
   const [products, setProduct] = React.useState<IProductProps | {}>();

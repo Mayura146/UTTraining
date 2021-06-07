@@ -9,8 +9,8 @@ import reducer from './store/reducers';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
-const store:Store<ProductState,ProductAction> &{dispatch:DispatchType}=
-createStore(reducer); 
+const store:Store<ProductState,ProductAction> 
+&{dispatch:DispatchType}=createStore(reducer,applyMiddleware(thunk)); 
 ReactDOM.render(
 <Provider store={store}>
     <App />
