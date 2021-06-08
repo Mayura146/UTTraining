@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createTodoActionCreator, deleteTodoActionCreator, editToActionCreator, selectoDoActionCreator } from "./store/actionCreator";
+import { editTodoActionCreator, deleteTodoActionCreator, createTodoActionCreator,selectTodoActionCreator} from "./react-toolkit";
+
 
 import { State } from "./ToDo";
 
@@ -34,7 +35,8 @@ function App() {
   };
 
   const handleSelectTodo = (todoId: string) => (): void => {
-    dispatch(selectoDoActionCreator({ id: todoId }));
+    console.log("Display");
+    dispatch(selectTodoActionCreator({ id: todoId }));
   };
 
   const handleEdit = (): void => {
@@ -60,7 +62,7 @@ const handleUpdate = (e: FormEvent<HTMLFormElement>): void => {
   }
 
   dispatch(
-    editToActionCreator({ id: selectedTodoId, description: editTodoInput })
+    editTodoActionCreator({ id: selectedTodoId, desc: editTodoInput })
   );
   setIsEditMode(false);
   setEditTodoInput("");
@@ -87,7 +89,7 @@ return (
   <div>
     <div>Todos Updated Count: {editedCount}</div>
     <div>
-      <h1>Todo: Redux and RTK Edition</h1>
+      <h1>Todo: Redux and Redux Tool Kit Demo</h1>
       <form onSubmit={handleCreateNewTodo}>
         <label htmlFor="new-todo">Add new:</label>
         <input
