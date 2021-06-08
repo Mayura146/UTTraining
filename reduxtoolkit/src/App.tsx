@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-//import { createTodoActionCreator, deleteTodoActionCreator, editTodoActionCreator, EditTodoActionType, selectTodoActionCreator, toggleTodoActionCreator } from "./store/actionCreator";
-import { createTodoActionCreator, deleteTodoActionCreator, editTodoActionCreator,selectTodoActionCreator, toggleTodoActionCreator } from "./reduxtoolkit";
+import { createTodoActionCreator, deleteTodoActionCreator, editToActionCreator, selectoDoActionCreator } from "./store/actionCreator";
+
 import { State } from "./ToDo";
 
 function App() {
@@ -29,12 +29,12 @@ function App() {
     e.preventDefault();
     if (!newTodoInput.length) return;
 
-    dispatch(createTodoActionCreator({ desc: newTodoInput }));
+    dispatch(createTodoActionCreator({ description: newTodoInput }));
     setNewTodoInput("");
   };
 
   const handleSelectTodo = (todoId: string) => (): void => {
-    dispatch(selectTodoActionCreator({ id: todoId }));
+    dispatch(selectoDoActionCreator({ id: todoId }));
   };
 
   const handleEdit = (): void => {
@@ -60,7 +60,7 @@ const handleUpdate = (e: FormEvent<HTMLFormElement>): void => {
   }
 
   dispatch(
-    editTodoActionCreator({ id: selectedTodoId, desc: editTodoInput })
+    editToActionCreator({ id: selectedTodoId, description: editTodoInput })
   );
   setIsEditMode(false);
   setEditTodoInput("");
@@ -75,13 +75,7 @@ const handleUpdate = (e: FormEvent<HTMLFormElement>): void => {
 const handleToggle = (): void => {
   if (!selectedTodoId || !selectedTodo) return;
 
-  dispatch(
-    toggleTodoActionCreator({
-      id: selectedTodoId,
-      isComplete: !selectedTodo.isComplete
-    })
-  );
-};
+}
 
 const handleDelete = (): void => {
   if (!selectedTodoId) return;
@@ -115,7 +109,7 @@ return (
             key={todo.id}
             onClick={handleSelectTodo(todo.id)}
           >
-            <span className="list-number">{i + 1})</span> {todo.desc}
+            <span className="list-number">{i + 1})</span> {todo.description}
           </li>
         ))}
       </ul>
@@ -130,11 +124,10 @@ return (
                 selectedTodo?.isComplete ? "done" : ""
               }`}
             >
-              {selectedTodo.desc}
+              {selectedTodo.description}
             </span>
             <div className="todo-actions">
               <button onClick={handleEdit}>Edit</button>
-              <button onClick={handleToggle}>Toggle</button>
               <button onClick={handleDelete}>Delete</button>
             </div>
           </>
