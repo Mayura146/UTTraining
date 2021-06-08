@@ -84,9 +84,9 @@ const handleDelete = (): void => {
 };
 
 return (
-  <div className="App">
-    <div className="App__counter">Todos Updated Count: {editedCount}</div>
-    <div className="App__header">
+  <div>
+    <div>Todos Updated Count: {editedCount}</div>
+    <div>
       <h1>Todo: Redux and RTK Edition</h1>
       <form onSubmit={handleCreateNewTodo}>
         <label htmlFor="new-todo">Add new:</label>
@@ -98,8 +98,8 @@ return (
         <button type="submit">Create</button>
       </form>
     </div>
-    <div className="App__body">
-      <ul className="App__list">
+    <div>
+      <ul>
         <h2>My Todos:</h2>
         {todos.map((todo, i) => (
           <li
@@ -113,10 +113,10 @@ return (
           </li>
         ))}
       </ul>
-      <div className="App_todo-info">
+      <div>
         <h2>Selected Todo:</h2>
         {selectedTodo === null ? (
-          <span className="empty-state">No Todo Selected</span>
+          <span>No Todo Selected</span>
         ) : !isEditMode ? (
           <>
             <span
