@@ -10,7 +10,7 @@ type ShoeData={
 type CartItem={
     id:string;
     name:string;
-    price:string;
+    price:number;
     category:string;
     image:string;
     quantity:number;
